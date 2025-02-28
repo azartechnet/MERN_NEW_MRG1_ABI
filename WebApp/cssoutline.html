@@ -1,0 +1,41 @@
+<!--
+   outline-style
+   outline-color
+   outline-width
+   outline-offset
+   outline
+-->
+   <html>
+    <head>
+        <title></title>
+        <style>
+            p
+            {
+                outline-color: red;
+                border-style: dotted;
+                border-color: blue;
+            }
+            p.d1
+            {
+                outline-style: dashed;
+            }
+            p.d2
+            {
+                outline-style: dotted;
+            }
+            p.d3
+            {
+                outline-style: dotted;
+                outline-offset: 1px;
+                outline-width: 1px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <p class="d1">Outline-style: dashed</p>
+        <p class="d2">Outline-style: dotted</p>
+        <p class="d3">Outline-style: dotted with offset and width</p>
+
+    </body>
+   </html>
