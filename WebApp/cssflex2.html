@@ -1,0 +1,62 @@
+<!--
+   flex-direction
+   flex-wrap
+   flex-flow
+   justify-content
+      -center
+      -flex-start
+      -flext-end
+      -space-between
+      -space-arount
+      -space-evenly
+   align-items
+       -center
+       -flex-start
+       -flex-end
+       -baseline
+       -stretch
+       -normal
+   align-content
+-->
+<html>
+    <head>
+        <title></title>
+        <style>
+            .flex-container {
+                display: flex;
+                /* flex-direction: row-reverse; */
+                /* flex-direction: column; */
+                /* flex-direction: column-reverse; */
+                /* flex-wrap: nowrap; */
+                /* flex-wrap: wrap; */
+                /* flex-wrap: wrap-reverse; */
+                /* flex-flow: row wrap; */
+                /* justify-content: center; */
+                /* justify-content: space-evenly; */
+                /* align-items: flex-end; */
+                background-color: aqua;
+              
+            }
+            .flex-container>div
+            {
+                background-color: blue;
+                width: 100px;
+                margin: 10px;
+                /* text-align: center; */
+                line-height: 75px;
+                font-size: 30px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            
+        </div>
+    </body>
+</html>
