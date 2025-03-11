@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Icons</title>
+    <!-- Font Awesome (for icons) -->
+    <script src="https://kit.fontawesome.com/YOUR-KIT-CODE.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Reset default margin and padding */
+        body, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Responsive styles */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+
+        .menu-toggle:focus {
+            outline: none;
+        }
+
+        /* Mobile styles */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #333;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                text-align: center;
+            }
+
+            .navbar li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Show menu when checked */
+            #menu-toggle-checkbox:checked ~ .navbar {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!-- Hidden checkbox for menu toggle -->
+        <input type="checkbox" id="menu-toggle-checkbox" style="display: none;">
+        <label for="menu-toggle-checkbox" class="menu-toggle">
+            <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+        </label>
+
+        <ul class="navbar">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Services</a></li>
+            <li><a href="#"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
