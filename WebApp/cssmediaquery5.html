@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Example</title>
+    <style>
+        div.example {
+            background-color: lightblue;
+            padding: 20px;
+        }
+        
+        @media screen and (min-width: 768px) and (max-width: 899px) {
+            div.example {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: aqua;
+            }
+        }
+        
+        @media screen and (min-width: 900px) and (max-width: 1199px) {
+            div.example {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-style: italic;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="example">
+        This is a div tag
+    </div>
+</body>
+</html>
