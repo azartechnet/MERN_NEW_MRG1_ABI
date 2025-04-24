@@ -1,0 +1,21 @@
+<script>
+n=parseInt(prompt("Enter the n value is::"))
+
+s=0;
+temp=n
+while(n>0)
+  {
+    rem=n%10;
+    s=s+rem*rem*rem;
+    n=Math.floor(n/10);
+    }
+if(temp==s)
+{
+    document.write("This is arm strong number")
+}
+else
+{
+    document.write("This is not a armStrong number")
+}
+
+</script>
