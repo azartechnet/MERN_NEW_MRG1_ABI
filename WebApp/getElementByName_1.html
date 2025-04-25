@@ -1,0 +1,14 @@
+<body>
+    UserName:<input type="text" name="u1" value="mohamed"/><br>
+    <input type="submit" value="Login"/><br>
+    Your value is::<p id="d1"></p>
+    <script>
+        var username1=document.getElementsByName("u1");
+        for(var i=0;i<username1.length;i++)
+    {
+        // console.log(username1[i].value);
+        // document.write(username1[i].value);
+        document.getElementById("d1").innerHTML=username1[i].value;
+    }
+    </script>
+</body>
