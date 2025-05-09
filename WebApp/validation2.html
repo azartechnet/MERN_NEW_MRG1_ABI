@@ -1,0 +1,23 @@
+<body>
+    <form id="myForm" onsubmit="return validateForm()">
+           <label>Name</label>
+           <input type="text" id="name" name="name">
+           <br>
+           <br>
+           <input type="submit" value="Submit">
+    </form>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value.trim();
+                if(name===" ")
+                {
+                    alert("Please enter your name");
+                    return false;
+                }
+                else
+                {
+                    alert("Form submitted successfully");
+                }
+                }
+    </script>
+</body>
