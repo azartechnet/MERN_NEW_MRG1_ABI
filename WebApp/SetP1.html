@@ -1,0 +1,9 @@
+<p id="demo"></p>
+<script>
+    const empname=new Set(["azar","mohan","raja","shiek","azar"])
+    console.log(empname.size);
+    console.log(empname.has("azar"));
+    for(let i of empname){
+    document.getElementById("demo").innerHTML+=i;
+    }
+</script>
