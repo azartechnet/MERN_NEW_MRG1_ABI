@@ -1,0 +1,15 @@
+<script>
+    const empname=new Map([
+        ["1", "John"],
+        ["2", "Anna"],
+        ["3", "Peter"],
+        ["4", "Linda"],
+    ])
+    console.log(empname.get("1")); // John
+    let text="";
+    for(const x of empname.values()){
+        text+=x+" ";
+        }
+        console.log(text); // 1 2 3 4
+        
+</script>

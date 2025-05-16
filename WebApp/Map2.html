@@ -1,0 +1,17 @@
+<p id="d1"></p>
+<script>
+    const empname=new Map();
+    empname.set("1","John");
+    empname.set("2","raja");
+    empname.set("3","mohan");
+    empname.set("4","kumar");
+    empname.set("5","suresh");
+    let numb=empname.get("1");
+    console.log(numb);
+    //document.getElementById("d1").innerHTML="There is"+numb+"values";
+    empname.delete("1");
+    document.getElementById("d1").innerHTML=empname.size;
+    document.getElementById("d1").innerHTML=empname.has("1");
+    
+
+</script>
