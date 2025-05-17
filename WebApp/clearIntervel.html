@@ -1,0 +1,12 @@
+<p id="d1"></p>
+<button onclick="myStop()">Stop!!!</button>
+<script>
+    const my2=setInterval(my1,1000);
+    function my1(){
+        document.getElementById("d1").innerHTML+="Hello";
+    }
+    function myStop()
+    {
+        clearInterval(my2);
+    }
+</script>
