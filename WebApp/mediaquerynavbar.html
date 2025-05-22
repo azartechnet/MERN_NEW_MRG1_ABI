@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">MySite</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </nav>
+<!-- Image placed below the navbar -->
+  <img src="images/c1.jpeg" alt="Banner Image" class="banner-image">
+
+<div class="container">
+  <div class="box"><img src="images/b1.jpeg" alt=""></div>
+  <div class="box"><img src="images/b2.jpeg" alt=""></div>
+  <div class="box"><img src="images/b3.jpeg" alt=""></div>
+</div>
+
+  <script>
+    // Simple toggle for mobile menu
+    document.getElementById('menuToggle').onclick = function () {
+      document.getElementById('navLinks').classList.toggle('active');
+    };
+  </script>
+</body>
+</html>
