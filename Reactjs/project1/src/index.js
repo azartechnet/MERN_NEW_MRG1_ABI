@@ -61,7 +61,7 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
 
   //React List
 
-  const MyElem=()=>{
+  /*const MyElem=()=>{
     return(
       <div>
         <h1>MyList</h1>
@@ -80,4 +80,65 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
   }
 
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<MyElem/>)
+  r1.render(<MyElem/>)*/
+
+  //conditional Rendering
+  /*const x=20;
+  let text="";
+  if(x>10)
+  {
+    text="x is greater than 10";
+  }
+  else
+  {
+    text="x is less than 10";
+  }
+  const MyElem=()=>{
+    return(
+      <div>
+        <h1>{text}</h1>
+      </div>
+    )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<MyElem/>);*/
+
+    /*const x=10;
+    let text="";
+    if(x>10)
+    {
+       text="x is greater than 10";
+    }
+    else if(x==10)
+    {
+       text="Equal to 10";
+    }
+    else
+    {
+      text="x is less than 10";
+    }
+    const MyElem=()=>{
+      return(
+        <div>
+          <h1>{text}</h1>
+        </div>
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<MyElem/>);*/
+
+    //Task nested if else statement
+
+    import './index.css'
+
+    const App=()=>{
+      return(
+        <>
+          <h1>Welcome</h1>
+          <p className="f1">This is paragraph</p>
+        </>
+      
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<App/>)
