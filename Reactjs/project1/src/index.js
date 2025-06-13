@@ -187,7 +187,7 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
 
     //Using onClick()
 
-    function SimpleButton()
+    /*function SimpleButton()
     {
       function showMessage()
       {
@@ -200,4 +200,86 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
       )
     }
     const r1=ReactDOM.createRoot(document.getElementById('root'))
-    r1.render(<SimpleButton/>)
+    r1.render(<SimpleButton/>)*/
+
+    //function component with props
+
+    /*function Sample(props)
+    {
+      return(
+        <div>
+          <h1>Hello{props.name}{props.age}</h1>
+          <p>This is paragraph</p>
+        </div>
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Sample name="azar" age="25"/>)*/
+
+    //Component in Component
+
+    /*function Component1()
+    {
+      return(
+        <div>
+          <h1>Hello</h1>
+          <p>Component1</p>
+          <Component2/>
+        </div>
+      )
+    }
+    function Component2()
+    {
+      return(
+        <h1>This is Component2</h1>
+      )
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Component1/>)*/
+
+    //Constructor using Super
+
+    /*class Sample extends React.Component
+    {
+      constructor()
+      {
+        super();
+        this.state={name:"azar",age:25}
+      }
+      render()
+      {
+        return(
+          <div>
+            <h1>Hello{this.state.name}{this.state.age}</h1>
+            <p>Welcome</p>
+          </div>
+        )
+      }
+    }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Sample/>)*/
+
+
+  //constructor using props
+
+  class Sample extends React.Component
+  {
+    constructor(props)
+    {
+      super(props);
+      this.state={name:props.name,age:props.age}
+    }
+    render()
+    {
+      return(
+        <div>
+          <h1>Welcome{this.props.name}{this.props.age}</h1>
+        </div>
+      )
+    }
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Sample name="azar" age="25"/>)
+
+
+
