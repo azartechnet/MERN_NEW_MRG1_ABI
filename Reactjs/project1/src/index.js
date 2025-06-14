@@ -262,7 +262,7 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
 
   //constructor using props
 
-  class Sample extends React.Component
+  /*class Sample extends React.Component
   {
     constructor(props)
     {
@@ -279,7 +279,66 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
     }
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<Sample name="azar" age="25"/>)
+  r1.render(<Sample name="azar" age="25"/>)*/
+
+  //Class Component Another Programs
+
+  /*class Counter extends React.Component
+  {
+    constructor(props)
+    {
+      super(props);
+      this.state={count:0}
+
+    }
+  
+  increment=()=>{
+    this.setState({count:this.state.count+1})
+  }
+  decrement=()=>{
+    this.setState({count:this.state.count-1})
+    }
+    render()
+    {
+      return(
+         <div>
+          <h2>{this.state.count}</h2>
+           <button onClick={this.increment}>increment</button>
+           <button onClick={this.decrement}>Decrement</button>
+
+         </div>
+      )
+    }
+  }
+    const r1=ReactDOM.createRoot(document.getElementById('root'))
+    r1.render(<Counter/>)*/
+
+    //Another Example
+
+    class ToggleMessage extends React.Component
+    {
+      constructor(props)
+      {
+        super(props);
+        this.state={visible:false}
+        }
+        toggle=()=>{
+          this.setState({visible:!this.state.visible})
+        }
+        render()
+        {
+          return(
+            <>
+             <h1>Toggle Message</h1>
+             <button onClick={this.toggle}>{this.state.visible?'Hide':'Show'}</button>
+              {this.state.visible&&<p>Hello I am visiable</p>}
+            </>
+           
+          )
+    }
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<ToggleMessage/>)
 
 
 
