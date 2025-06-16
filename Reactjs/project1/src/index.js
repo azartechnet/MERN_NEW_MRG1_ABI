@@ -315,7 +315,7 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
 
     //Another Example
 
-    class ToggleMessage extends React.Component
+    /*class ToggleMessage extends React.Component
     {
       constructor(props)
       {
@@ -338,7 +338,76 @@ r1.render(React.createElement("div",null,myelem1,myelem2))*/
     }
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<ToggleMessage/>)
+  r1.render(<ToggleMessage/>)*/
+
+  /*import App from "./Sample";
+
+  const r1=ReactDOM.createRoot(document.getElementById('root'));
+  r1.render(<App/>)*/
+
+  //Changing the State object
+
+/*class Sample extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={name:"Rahul",age:25}
+    this.handleClick=this.handleClick.bind(this);
+  }
+  handleClick()
+  {
+    this.setState({age:40})
+  }
+  render()
+  {
+    return(
+      <>
+      <h1>Hello{this.state.name}{this.state.age}</h1>
+      <button onClick={this.handleClick}>Click</button>
+      </>
+  )
+
+}
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)*/
 
 
+/*import MyComponent from "./Sample";
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<MyComponent/>)*/
+
+//React Event
+
+/*function Football()
+{
+  const shoot=()=>{
+    alert("Goal")
+  }
+  return(
+    <>
+      <button onClick={shoot}>Shoot</button>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//React Argument passing
+
+function Football()
+{
+  const shoot=(year)=>{
+    alert(`Goal in ${year}`)
+  }
+  return(
+    <>
+       <button onClick={()=>shoot(2002)}>Shoot</button>
+    </>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)
 
