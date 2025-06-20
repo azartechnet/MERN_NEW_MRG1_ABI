@@ -559,7 +559,7 @@ r1.render(<Profile/>)*/
 
 //Destructuring in Arrays
 
-function Skills()
+/*function Skills()
 {
   const skills=["java","python","c++"];
   const [first,second,third]=skills;
@@ -577,7 +577,125 @@ function Skills()
 export default Skills;
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Skills/>)
+r1.render(<Skills/>)*/
+
+//getDerivedStateFromProps
+
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={count:0};
+  }
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log("getDerivedStateFromProps");
+    return{count:props.count}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>Count:{this.state.count}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header count={10}/>)*/
+
+//ComponentDidMount
+
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={favcolor:"red"};
+  }
+  componentDidMount()
+  {
+    console.log("componentDidMount");
+    setTimeout(()=>{
+      this.setState({favcolor:"blue"});
+    },6000)
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>My Fav Color  is {this.state.favcolor}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)*/
+
+//updating getDerivedStateFromProps
+
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={favcolor:"red"}
+  }
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log("getDerivedStateFromProps");
+  }
+  changeColor=()=>{
+    this.setState({favcolor:"blue"})
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>My Fav Color::{this.state.favcolor}</p>
+        <button onClick={this.changeColor}>ChangeColor</button>
+      </div>
+      )
+  }
+  
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>);*/
+
+//shouldComponent Update
+
+class Counter extends React.Component
+{
+  constructor()
+  {
+      super();
+      this.state={count:0}
+  }
+  shouldComponentUpdate(nextProps,nextState)
+  {
+    console.log("shouldComponentUpdate");
+    //only update if count is even
+    return nextState.count%2==0;
+  }
+  increment=()=>{
+    this.setState({count:this.state.count+1})
+    }
+    render()
+    {
+      return(
+        <div>
+            <p>Count::{this.state.count}</p>
+            <button onClick={this.increment}>increment</button>
+        </div>
+        )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)
 
 
 
