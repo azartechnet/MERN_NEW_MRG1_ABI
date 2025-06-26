@@ -740,7 +740,7 @@ r1.render(<ThemeSwitcher/>)*/
 
 //useEffect
 
-function ClickCouter()
+/*function ClickCouter()
 {
   const [count, setCount] = useState(0);
   useEffect(()=>{
@@ -754,7 +754,65 @@ function ClickCouter()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<ClickCouter/>)
+r1.render(<ClickCouter/>)*/
+
+/*import CardFilterApp from "./CardFilterApp";
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<CardFilterApp/>)*/
+
+//Example 1
 
 
+/*const Example1=()=>{
+  useEffect(()=>{
+    console.log("Component Mounted");
+  },[])
+  return(
+    <h3>Hello from useEffect</h3>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Example1/>)*/
+
+//Example 2
+
+/*const Example2=()=>{
+useEffect(()=>{
+  const timer=setInterval(()=>{
+    console.log("Timer is running");
+  },1000)
+
+  return()=>{
+    clearInterval(timer);
+    console.log("TimeCleared")
+    }
+},[])}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Example2/>)*/
+
+//React without useContext
+
+function Component1()
+{
+  const [user,setUser]=useState("mohamed")
+  return(
+    <div>
+      <h1>Username is::{user}</h1>
+      <button onClick={()=>setUser("azar")}>Change user</button>
+      <Component2 user={user}/>
+    </div>
+  )
+}
+function Component2(props)
+{
+    return(
+      <div>
+        <h1>UserName is::{props.user}</h1>
+      </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)
 
