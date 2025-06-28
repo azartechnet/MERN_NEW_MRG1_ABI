@@ -794,7 +794,7 @@ r1.render(<Example2/>)*/
 
 //React without useContext
 
-function Component1()
+/*function Component1()
 {
   const [user,setUser]=useState("mohamed")
   return(
@@ -814,5 +814,114 @@ function Component2(props)
     )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Component1/>)
+r1.render(<Component1/>)*/
+
+//React with using userContext
+
+/*import { useContext,createContext } from "react";
+const UserContext=createContext();
+
+function Component1()
+{
+  const [user,setUser]=useState("mohamed");
+  return(
+    <UserContext.Provider value={user}>
+      
+      <h1>This is Component1 is::{user}</h1>
+
+      <Component2/>
+
+    </UserContext.Provider>
+  )
+}
+function Component2()
+{
+  const user=useContext(UserContext);
+
+  return(
+    <div>
+      <h1>Component2 is::{user}</h1>
+      <Component3/>
+    </div>
+  )
+}
+function Component3()
+{
+  const user=useContext(UserContext);
+  return(
+    <div>
+      <h1>Component3 is::{user}</h1>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Component1/>)*/
+
+/*import {useRef} from 'react';
+
+function FocusInput()
+{
+  const ir=useRef("");
+  const handleFocus=()=>{
+    ir.current.focus();
+  }
+  return(
+    <div>
+      <input type="text" ref={ir}/>
+      <button onClick={handleFocus}>Focus</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<FocusInput/>)*/
+
+//Another Program useState
+
+/*function UserProfile()
+{
+  const [user,setUser]=useState({name:"mohamed",age:24,email:"azar@gmail.com"})
+
+  const updateEmail=()=>{
+    setUser({...user,email:"mohamed@gmail.com"})
+  }
+  return(
+    <div>
+      <h1>Name:{user.name}</h1>
+      <h1>Age:{user.age}</h1>
+      <h1>Email:{user.email}</h1>
+      <button onClick={updateEmail}>UpdateEmail</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<UserProfile/>)*/
+
+//UseState Todolist
+
+function Todolist()
+{
+  const [todos,setTodos]=useState(["azar","mohamed","raja"])
+
+  const addTodo=()=>{
+    setTodos([...todos,"mohan"])
+    }
+    const deleteTodo=(index)=>{
+      setTodos([...todos.slice(0,index),...todos.slice(index+1)])
+      }
+    return(
+      <div>
+         <h1>TodoList</h1>
+         <ul>
+          {todos.map((todo,index)=>
+           <li>{index}{todo}
+           <button onClick={()=>deleteTodo(index)}>Delete</button>
+           </li>
+          )}
+         </ul>
+         <button onClick={addTodo}>Add</button>
+      </div>
+      )
+}
+const r1=ReactDOM.createRoot(document.getElementById("root"))
+r1.render(<Todolist/>)
 
