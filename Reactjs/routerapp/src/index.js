@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import NoPage from './pages/NoPage';
 import Product from './pages/Product';
 import Login from './pages/Login';
+import FeedbackForm from './pages/FeedbackForm';
 export default function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="contact" element={<Contact/>}/>
       <Route path="product" element={<Product/>}/>
       <Route path="login" element={<Login/>}/>
+      <Route path="feedback" element={<FeedbackForm/>}/>
       <Route path="*" element={<NoPage/>}/>
       </Route>
     </Routes>
