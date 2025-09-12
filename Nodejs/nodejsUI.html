@@ -1,0 +1,37 @@
+
+
+<body>
+    <h1>Digital Clock with Reminder</h1>
+    <div  id="clock" >
+      --:--:--
+    </div>
+    <button onclick="startClock()">StartClock</button>
+    <button onclick="stopClock()">StopClock</button>
+    <button onclick="setReminder()">Set 5s Reminder</button>
+    <div id="reminder"></div>-
+    <script>
+        let clockInterval;
+        function startClock()
+        {
+          if(clockInterval) return;
+          clockInterval=setInterval(()=>{
+            let now=new Date();
+            document.getElementById("clock").innerHTML=now.toLocaleTimeString();
+          },1000)
+        }
+        //stop clock
+        function stopClock()
+        {
+            clearInterval(clockInterval)
+            clockInterval=null;
+        }
+        //Reminder using setTimeout
+        function setReminder()
+        {
+            document.getElementById("reminder").innerHTML="Reminder set...";
+            setTimeout(()=>{
+                document.getElementById("reminder").innerHTML="TimeUp 5 ! seconds"
+            },5000)
+        }
+    </script>
+</body>
