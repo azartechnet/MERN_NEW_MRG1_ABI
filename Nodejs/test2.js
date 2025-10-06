@@ -39,5 +39,5 @@ app.get('/api/product/:sku', (req, res) => {
 
 app.listen(PORT, () => console.log(`Mock API Gateway running at http://localhost:${PORT}`));
 // Test URLs:
-// http://localhost:3000/api/product/A101
+//  
 // http://localhost:3000/api/product/B202
