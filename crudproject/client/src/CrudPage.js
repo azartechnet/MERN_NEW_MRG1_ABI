@@ -6,9 +6,11 @@ function CrudPage()
 {
    const [foodName,setFoodName]=useState("");
    const [description,setDescription]=useState("");
-   // useEffect(()=>{
-   //    fetchData();
-   // },[])
+   const [foodList,setFoodList]=useState([]);
+
+   useEffect(()=>{
+      fetchData();
+   },[])
    //inserted
    const addFoodData=()=>{
       Axios.post("http://localhost:3001/insert",{foodName,description})
@@ -17,6 +19,14 @@ function CrudPage()
       })
       .catch((err)=>{
          console.log(err)
+      })
+   }
+
+   //get data
+   const fetchData=()=>{
+      Axios.get("http://localhost:3001/read").then((response)=>{
+         console.log(response.data)
+         setFoodList(response.data)
       })
    }
     return(
@@ -46,15 +56,18 @@ function CrudPage()
               </tr>
               </thead>
               <tbody>
-               <tr>
-                  <td>Apple</td>
-                  <td>Good</td>
+               {foodList.map((val,key)=>(
+                  <tr key={key}>
+                      <td>{val.foodName}</td>
+                      <td>{val.description}</td>
+                          
                   <td>
                      <input type="text" placeholder="UpdateFoodName"/>
                      <button className="btn btn-primary" onClick={""}>Update</button>
                   </td>
                   <td><button className="btn btn-danger" onClick={""}>Delete</button></td>
                </tr>
+               ))}
               </tbody>
           </table>
        </div>

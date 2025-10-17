@@ -36,7 +36,18 @@ app.post("/insert",async(req,res)=>{
           console.log(err)
     }
 })
-
+//Read the data
+app.get("/read",async(req,res)=>{
+    try
+    {
+        const food=await FoodModel.find();
+        res.send(food)
+    }
+    catch(err)
+    {
+        res.send("Error")
+    }
+})
 
 app.listen(3001,()=>{
     console.log("Server is Running...")
