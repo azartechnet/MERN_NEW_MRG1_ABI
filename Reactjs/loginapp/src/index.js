@@ -1,6 +1,11 @@
-import react from "react";
-import ReactDOM from 'react-dom/client';
-import LoginApp from "./LoginApp";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
-const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<LoginApp/>)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
