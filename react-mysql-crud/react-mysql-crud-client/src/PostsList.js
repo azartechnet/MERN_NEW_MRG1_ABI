@@ -10,7 +10,10 @@ const PostsList=()=>{
         axios.get('http://localhost:3001/getposts')
         .then(response=>setPosts(response.data))
     },[])
-
+     const handleDelete=async (id)=>{
+      await axios.delete(`http://localhost:3001/deletepost/${id}`);
+      setPosts(posts.filter(post=>post.id!==id));
+     }
     return(
          <div className="container mt-5">
               <h2>PostsList</h2>
@@ -32,8 +35,8 @@ const PostsList=()=>{
                                   <td>{post.title}</td>
                                   <td>{post.body}</td>
                                   <td>
-                                    <Link to={""} className="btn btn-warning btn-sm mr-2">Edit</Link>
-                                    <button onClick={""} className="btn btn-danger btn-sm">Delete</button> 
+                                    <Link to={`/edit/${post.id}`} className="btn btn-warning btn-sm mr-2">Edit</Link>
+                                    <button onClick={()=>handleDelete(post.id)} className="btn btn-danger btn-sm">Delete</button> 
                                   </td>
                                 </tr>
                             )
