@@ -13,7 +13,7 @@ app.use(express.json())
 
 
 const FoodModel=require("./models/Food")
-mongoose.connect("mongodb+srv://admin:admin@cluster0.wqxwhyo.mongodb.net/?appName=Cluster0/food")
+mongoose.connect("mongodb+srv://admin:admin@cluster0.wqxwhyo.mongodb.net/food")
 .then(()=>console.log('Connected'))
 .catch(err=>console.log(err))
 
